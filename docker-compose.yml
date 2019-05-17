@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  my-app:
+    build:
+      context: ./web-service
+      dockerfile: Dockerfile
+    image: my-app
+    ports:
+      - 8080:8080
+    networks:
+      - network1
+
+networks:
+  network1:
