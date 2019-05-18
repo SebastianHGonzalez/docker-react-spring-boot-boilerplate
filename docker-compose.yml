@@ -32,6 +32,8 @@ services:
     expose:
       - "3000"
     command: "npm start"
+    networks:
+     - network1
 
 networks:
   network1:
