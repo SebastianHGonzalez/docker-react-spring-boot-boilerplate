@@ -3,6 +3,9 @@ version: '3.7'
 services:
   nginx:
     image: nginx:latest
+    depends_on:
+      - my-app
+      - my-client
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
@@ -22,12 +25,13 @@ services:
 
   my-client:
     container_name: my-client
-    build:
-      context: ./web-client
-      dockerfile: Dockerfile.dev
-    image: my-client
-    networks:
-      - network1
+    image: "node:10.15.3-alpine"
+    working_dir: /home/node/app
+    volumes:
+      - ./web-client:/home/node/app
+    expose:
+      - "3000"
+    command: "npm start"
 
 networks:
   network1:
