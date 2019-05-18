@@ -12,6 +12,7 @@ services:
       - network1
 
   my-app:
+    container_name: my-app
     build:
       context: ./web-service
       dockerfile: Dockerfile
