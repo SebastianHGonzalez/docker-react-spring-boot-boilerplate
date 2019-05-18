@@ -7,6 +7,6 @@
 start dev environment
 
 ``` bash
-cd ./web-app && mvn package && cd ..
+cd ./web-service && mvn package && cd ..
 docker-compose up --build
 ```
