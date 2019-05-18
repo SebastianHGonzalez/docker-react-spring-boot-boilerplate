@@ -20,5 +20,14 @@ services:
     networks:
       - network1
 
+  my-client:
+    container_name: my-client
+    build:
+      context: ./web-client
+      dockerfile: Dockerfile.dev
+    image: my-client
+    networks:
+      - network1
+
 networks:
   network1:
