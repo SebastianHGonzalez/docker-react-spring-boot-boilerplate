@@ -31,7 +31,7 @@ services:
       - ./web-client:/home/node/app
     expose:
       - "3000"
-    command: "npm start"
+    command: "npm run dev"
     networks:
      - network1
 
